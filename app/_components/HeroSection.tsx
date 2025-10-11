@@ -1,13 +1,13 @@
 import MagicButton from '@/components/MagicButton';
 import { Spotlight } from '@/components/ui/spotlight';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
-import { cn } from '@/lib/utils';
-import { ArrowBigDown, ArrowDown } from 'lucide-react';
+
+import { ArrowDown } from 'lucide-react';
 import React from 'react';
 
 const HeroSection = () => {
   return (
-    <div className='pb-20 pt-36'>
+    <div className='py-32'>
       <div>
         <Spotlight
           className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen'
@@ -21,7 +21,7 @@ const HeroSection = () => {
       </div>
 
       <div
-        className='h-screen w-full dark:bg-background bg-white dark:bg-grid-white/[0.03] bg-grid-background/[0.2]
+        className='h-screen w-full dark:bg-background bg-white dark:bg-grid-white/[0.3] bg-grid-background/[0.2]
        absolute top-0 left-0 flex items-center justify-center'
       >
         <div

@@ -53,7 +53,7 @@
   --color-primary-foreground: oklch(0.205 0 0);
   --color-secondary: oklch(0.269 0 0);
   --color-secondary-foreground: oklch(0.985 0 0);
-  --color-muted: oklch(0.269 0 0);
+  --color-muted: #ffffff;
   --color-muted-foreground: oklch(0.708 0 0);
   --color-accent: oklch(0.269 0 0);
   --color-accent-foreground: oklch(0.985 0 0);
@@ -62,6 +62,7 @@
   --color-border: oklch(0.269 0 0);
   --color-input: oklch(0.269 0 0);
   --color-ring: oklch(0.439 0 0);
+  --text-strong: #f1f5f9; /* slate-100 */
 }
 
 /* Base styles */
@@ -74,6 +75,10 @@
     background-color: #000319;
     color: var(--color-foreground);
   }
+}
+:root {
+  --text-muted: #cbd5e1; /* slate-300 */
+  --text-strong: #0f172a; /* slate-900 */
 }
 
 /* Utility classes */
