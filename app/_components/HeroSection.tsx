@@ -1,11 +1,39 @@
+'use client';
+
 import MagicButton from '@/components/MagicButton';
 import { Spotlight } from '@/components/ui/spotlight';
-import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+import { personalInfo } from '@/data';
+import { 
+  fadeInUp, 
+  staggerContainer, 
+  usePrefersReducedMotion,
+  getAccessibleVariants 
+} from '@/lib/animations';
+import { motion, Variants } from 'framer-motion';
 
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, MapPin } from 'lucide-react';
 import React from 'react';
 
 const HeroSection = () => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  
+  // Get accessible variants based on user preference
+  const accessibleFadeInUp = getAccessibleVariants(fadeInUp, prefersReducedMotion);
+  const accessibleStaggerContainer = getAccessibleVariants(staggerContainer, prefersReducedMotion);
+
+  // Scroll indicator bounce animation
+  const scrollIndicatorVariants: Variants = {
+    initial: { y: 0 },
+    animate: {
+      y: [0, 10, 0],
+      transition: {
+        duration: 1.5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div className='py-32'>
       <div>
@@ -31,27 +59,65 @@ const HeroSection = () => {
       </div>
 
       <div className='flex justify-center relative my-20 z-10'>
-        <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-          <p className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>
+        <motion.div 
+          className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'
+          variants={accessibleStaggerContainer}
+          initial="initial"
+          animate="animate"
+        >
+          <motion.h1 
+            id='hero-heading'
+            className='text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-4'
+            variants={accessibleFadeInUp}
+          >
+            {personalInfo.name}
+          </motion.h1>
+          
+          <motion.h2 
+            className='text-center text-2xl md:text-3xl lg:text-4xl text-blue-100 mb-4'
+            variants={accessibleFadeInUp}
+          >
+            {personalInfo.title}
+          </motion.h2>
+          
+          <motion.div 
+            className='flex items-center gap-2 text-center md:tracking-wider mb-6 text-sm md:text-lg'
+            variants={accessibleFadeInUp}
+          >
+            <MapPin className='w-4 h-4 md:w-5 md:h-5' aria-hidden='true' />
+            <span>{personalInfo.location}</span>
+          </motion.div>
+
+          <motion.p 
+            className='uppercase tracking-widest text-sm text-center text-blue-100 max-w-80 mb-6'
+            variants={accessibleFadeInUp}
+          >
             React • Next.js • TypeScript • Tailwind CSS
-          </p>
-          <TextGenerateEffect
-            words='I build sleek, high-performance web experiences with React and Next.js.'
-            className='text-center text-[40px] md:text-5xl lg:text-6xl'
-          />
+          </motion.p>
 
-          <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-            Hi, I&apos;m Peter Awad.
-          </p>
+          <motion.div
+            variants={accessibleFadeInUp}
+          >
+            <a href='#about' aria-label='Scroll to about section'>
+              <MagicButton
+                title='Show my work'
+                icon={<ArrowDown />}
+                position='right'
+              />
+            </a>
+          </motion.div>
 
-          <a href='#about'>
-            <MagicButton
-              title='Show my work'
-              icon={<ArrowDown />}
-              position='right'
-            />
-          </a>
-        </div>
+          {/* Scroll indicator with bounce animation */}
+          <motion.div
+            className='absolute bottom-8 left-1/2 -translate-x-1/2'
+            variants={prefersReducedMotion ? { initial: {}, animate: {} } : scrollIndicatorVariants}
+            initial="initial"
+            animate="animate"
+            aria-hidden='true'
+          >
+            <ArrowDown className='w-6 h-6 text-blue-100 opacity-50' />
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
