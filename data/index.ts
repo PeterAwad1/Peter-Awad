@@ -92,7 +92,7 @@ export const projects: Project[] = [
     ],
     link: 'https://www.lucastay.it/en',
     status: 'production',
-    image: '/p1.svg',
+    image: '/images/luca.png',
   },
   {
     id: 'proj-2',
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ShadCN/UI'],
     link: 'https://www.passresidency.com/en',
     status: 'production',
-    image: '/p2.svg',
+    image: '/images/pass-residency.png',
   },
   {
     id: 'proj-3',
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     link: 'https://www.passwm.com/en',
     status: 'production',
-    image: '/p3.svg',
+    image: '/images/pass-wm.png',
   },
   {
     id: 'proj-4',
@@ -127,7 +127,7 @@ export const projects: Project[] = [
       'Zustand',
     ],
     status: 'development',
-    image: '/p4.svg',
+    image: '/images/homes.png',
     features: [
       'Property management system',
       'Analytics dashboard',
@@ -148,7 +148,7 @@ export const projects: Project[] = [
       'RESTful APIs',
     ],
     status: 'completed',
-    image: '/p1.svg',
+    image: '/images/acadmies.png',
     features: [
       'Student enrollment management',
       'Course and schedule management',
@@ -169,7 +169,7 @@ export const projects: Project[] = [
       'Zod',
     ],
     status: 'completed',
-    image: '/p2.svg',
+    image: '/images/g2g.png',
     features: [
       'International program management',
       'Student application processing',
@@ -260,69 +260,5 @@ export const socialMedia: SocialMediaLink[] = [
     platform: 'GitHub',
     url: 'https://github.com/PeterAwad1',
     icon: '/git.svg',
-  },
-];
-
-// Legacy exports for backward compatibility (can be removed later)
-export const gridItems = [
-  {
-    id: 1,
-    title: 'I prioritize client collaboration, fostering open communication ',
-    description: '',
-    className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]',
-    imgClassName: 'w-full h-full',
-    titleClassName: 'justify-end',
-    img: '/b1.svg',
-    spareImg: '',
-  },
-  {
-    id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
-    imgClassName: '',
-    titleClassName: 'justify-start',
-    img: '',
-    spareImg: '',
-  },
-  {
-    id: 3,
-    title: 'My tech stack',
-    description: 'I constantly try to improve',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
-    imgClassName: '',
-    titleClassName: 'justify-center',
-    img: '',
-    spareImg: '',
-  },
-  {
-    id: 4,
-    title: 'Tech enthusiast with a passion for development.',
-    description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
-    imgClassName: '',
-    titleClassName: 'justify-start',
-    img: '/grid.svg',
-    spareImg: '/b4.svg',
-  },
-  {
-    id: 5,
-    title: 'Currently crafting a modern UI component library',
-    description: 'React, Tailwind, and shadcn/ui',
-    className: 'md:col-span-3 md:row-span-2',
-    imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60',
-    titleClassName: 'justify-center md:justify-start lg:justify-center',
-    img: '/b5.svg',
-    spareImg: '/grid.svg',
-  },
-  {
-    id: 6,
-    title: 'Do you want to start a project together?',
-    description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
-    imgClassName: '',
-    titleClassName: 'justify-center md:max-w-full max-w-60 text-center',
-    img: '',
-    spareImg: '',
   },
 ];
