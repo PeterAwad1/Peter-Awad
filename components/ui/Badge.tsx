@@ -8,7 +8,7 @@ import { ReactNode } from "react";
 export interface BadgeProps {
   text: string;
   icon?: ReactNode;
-  variant?: 'default' | 'primary' | 'secondary';
+  variant?: 'default' | 'primary' | 'secondary' | 'custom';
   size?: 'sm' | 'md' | 'lg';
   pulse?: boolean;
   className?: string;
@@ -53,6 +53,7 @@ export function Badge({
     default: "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700",
     primary: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800",
     secondary: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800",
+    custom: "",
   };
 
   // Size styles - ensuring minimum 14px font size

@@ -1,166 +1,153 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-import { Badge } from "@/components/ui/Badge";
-import { usePrefersReducedMotion, getAccessibleVariants, scaleOnHover } from "@/lib/animations";
-import { useTouchDevice } from "@/lib/useTouchDevice";
-import { cn } from "@/lib/utils";
-import type { Project } from "@/data/types";
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import { Badge } from '@/components/ui/Badge';
+import {
+  usePrefersReducedMotion,
+  getAccessibleVariants,
+  scaleOnHover,
+} from '@/lib/animations';
+import { useTouchDevice } from '@/lib/useTouchDevice';
+import { cn } from '@/lib/utils';
+import type { Project } from '@/data/types';
 
 export interface ProjectCardProps {
   project: Project;
 }
 
-/**
- * ProjectCard component displays a single project with image, description, tech stack, and status
- * 
- * Features:
- * - Project image with overlay effect
- * - Technology badges with icons
- * - Status labels (Production/Development/Completed)
- * - Conditional clickability (only if project has link)
- * - External link indicator
- * - Hover effects (scale, shadow, image zoom)
- * 
- * @param project - Project data object
- */
 export function ProjectCard({ project }: ProjectCardProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const isTouchDevice = useTouchDevice();
-  const hoverVariants = getAccessibleVariants(scaleOnHover, prefersReducedMotion);
+  const hoverVariants = getAccessibleVariants(
+    scaleOnHover,
+    prefersReducedMotion,
+  );
 
   const hasLink = !!project.link;
 
-  // Status label configuration
   const statusConfig = {
-    production: { label: "Production", variant: "primary" as const },
-    development: { label: "Under Development", variant: "secondary" as const },
-    completed: { label: "Completed", variant: "default" as const },
+    production: {
+      label: 'Production',
+      className: 'border-blue-400/20 bg-blue-500/10 text-blue-100',
+    },
+    development: {
+      label: 'Under Development',
+      className: 'border-violet-400/20 bg-violet-500/10 text-violet-100',
+    },
+    completed: {
+      label: 'Completed',
+      className: 'border-white/15 bg-white/[0.08] text-blue-50/85',
+    },
   };
 
   const statusInfo = statusConfig[project.status];
 
   const handleClick = () => {
     if (hasLink && project.link) {
-      window.open(project.link, "_blank", "noopener,noreferrer");
+      window.open(project.link, '_blank', 'noopener,noreferrer');
     }
   };
 
-  const cardContent = (
+  return (
     <motion.div
       variants={hoverVariants}
-      whileHover={hasLink && !isTouchDevice ? "whileHover" : undefined}
+      whileHover={hasLink && !isTouchDevice ? 'whileHover' : undefined}
       whileTap={hasLink ? { scale: 0.98 } : undefined}
       className={cn(
-        "group relative overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800",
-        "bg-white dark:bg-neutral-900",
-        "shadow-sm transition-shadow duration-300",
-        !isTouchDevice && "hover:shadow-lg dark:hover:shadow-neutral-800/50",
-        hasLink && "cursor-pointer active:scale-[0.98]"
+        'group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.05] backdrop-blur-sm transition-all duration-300',
+        !isTouchDevice && 'hover:border-blue-400/30 hover:bg-white/[0.07]',
+        hasLink && 'cursor-pointer active:scale-[0.98]',
       )}
       onClick={handleClick}
-      role={hasLink ? "button" : undefined}
+      role={hasLink ? 'button' : undefined}
       aria-label={hasLink ? `View ${project.name} project` : undefined}
       tabIndex={hasLink ? 0 : undefined}
-      onKeyDown={hasLink ? (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleClick();
-        }
-      } : undefined}
+      onKeyDown={
+        hasLink
+          ? (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleClick();
+              }
+            }
+          : undefined
+      }
     >
-      {/* Project Image with Overlay */}
+      <div className='absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/70 to-transparent' />
+
       {project.image && (
-        <div className="relative h-48 w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+        <div className='relative h-52 w-full overflow-hidden bg-slate-950/60'>
           <Image
             src={project.image}
             alt={`${project.name} project screenshot`}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
             className={cn(
-              "object-cover transition-transform duration-300",
-              !isTouchDevice && "group-hover:scale-110"
+              'object-cover transition-transform duration-500',
+              !isTouchDevice && 'group-hover:scale-105',
             )}
             priority={false}
           />
-          {/* Overlay on hover - disabled on touch devices */}
-          {!isTouchDevice && (
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          )}
+          <div className='absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/20 to-transparent' />
         </div>
       )}
 
-      {/* Card Content */}
-      <div className="p-6">
-        {/* Header with Title and Status */}
-        <div className="mb-3 flex items-start justify-between gap-2">
-          <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            {project.name}
-            {hasLink && (
-              <ExternalLink 
-                className={cn(
-                  "ml-2 inline-block h-4 w-4 text-neutral-500 transition-colors",
-                  !isTouchDevice && "group-hover:text-blue-500"
-                )}
-                aria-hidden="true"
-              />
-            )}
-          </h3>
+      <div className='p-6 md:p-7'>
+        <div className='mb-4 flex items-start justify-between gap-3'>
+          <div>
+            <h3 className='text-xl font-semibold text-white'>
+              {project.name}
+              {hasLink && (
+                <ExternalLink
+                  className={cn(
+                    'ml-2 inline-block h-4 w-4 text-blue-100/60 transition-colors',
+                    !isTouchDevice && 'group-hover:text-blue-200',
+                  )}
+                  aria-hidden='true'
+                />
+              )}
+            </h3>
+            <p className='mt-3 text-sm leading-6 text-blue-50/70 line-clamp-3'>
+              {project.description}
+            </p>
+          </div>
+
           <Badge
             text={statusInfo.label}
-            variant={statusInfo.variant}
-            size="sm"
-            className="flex-shrink-0"
+            variant='custom'
+            size='sm'
+            className={cn('shrink-0 border', statusInfo.className)}
           />
         </div>
 
-        {/* Description */}
-        <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3">
-          {project.description}
-        </p>
-
-        {/* Features (if available) */}
         {project.features && project.features.length > 0 && (
-          <div className="mb-4">
-            <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-500">
-              Key Features
-            </h4>
-            <ul className="space-y-1">
-              {project.features.slice(0, 3).map((feature, idx) => (
-                <li
-                  key={idx}
-                  className="text-sm text-neutral-600 dark:text-neutral-400 flex items-start"
-                >
-                  <span className="mr-2 mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-blue-500" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+          <div className='mb-5 space-y-2'>
+            {project.features.slice(0, 3).map((feature, idx) => (
+              <div
+                key={idx}
+                className='flex items-start gap-3 rounded-2xl border border-white/8 bg-slate-950/30 px-4 py-3 text-sm leading-6 text-blue-50/75'
+              >
+                <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-400' />
+                <span>{feature}</span>
+              </div>
+            ))}
           </div>
         )}
 
-        {/* Technology Stack */}
-        <div>
-          <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-500">
-            Technologies
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech, idx) => (
-              <Badge
-                key={idx}
-                text={tech}
-                variant="default"
-                size="sm"
-                pulse={!prefersReducedMotion}
-              />
-            ))}
-          </div>
+        <div className='flex flex-wrap gap-2'>
+          {project.technologies.map((tech, idx) => (
+            <Badge
+              key={idx}
+              text={tech}
+              size='sm'
+              pulse={!prefersReducedMotion}
+              className='border-white/10 bg-white/[0.06] text-blue-50/85'
+            />
+          ))}
         </div>
       </div>
     </motion.div>
   );
-
-  return cardContent;
 }

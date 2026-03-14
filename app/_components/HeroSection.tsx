@@ -9,32 +9,11 @@ import {
   usePrefersReducedMotion,
   getAccessibleVariants,
 } from '@/lib/animations';
-import { motion, Variants } from 'framer-motion';
-import {
-  ArrowDown,
-  BriefcaseBusiness,
-  Code2,
-  MapPin,
-  Sparkles,
-} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowDown, MapPin, Sparkles } from 'lucide-react';
 import React from 'react';
 
 const techStack = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'];
-
-const highlights = [
-  {
-    title: '4+ years building interfaces',
-    description:
-      'Production-ready apps with attention to speed, structure, and polish.',
-    icon: BriefcaseBusiness,
-  },
-  {
-    title: 'Modern frontend stack',
-    description:
-      'Reusable components, scalable architecture, and smooth responsive UX.',
-    icon: Code2,
-  },
-];
 
 const HeroSection = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -47,20 +26,6 @@ const HeroSection = () => {
     staggerContainer,
     prefersReducedMotion,
   );
-
-  const scrollIndicatorVariants: Variants = {
-    initial: { y: 0 },
-    animate: prefersReducedMotion
-      ? {}
-      : {
-          y: [0, 10, 0],
-          transition: {
-            duration: 1.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          },
-        },
-  };
 
   return (
     <div className='relative  py-20 md:py-24 lg:min-h-[92vh] '>

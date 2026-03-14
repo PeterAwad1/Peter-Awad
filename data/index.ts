@@ -26,7 +26,7 @@ export const personalInfo: PersonalInfo = {
   email: 'peterelishea@gmail.com',
   phone: '+201551635180',
   summary:
-    'Frontend Developer with 4+ years of experience specializing in React, Next.js, and TypeScript. Proven track record of building production-ready web applications with modern technologies including Tailwind CSS and ShadCN/UI. Experienced in state management, API integration, and creating responsive, user-friendly interfaces. Strong background in communications engineering with military service experience.',
+    'Frontend Developer with 2+ years of experience specializing in React, Next.js, and TypeScript. Proven track record of building production-ready web applications with modern technologies including Tailwind CSS and ShadCN/UI. Experienced in state management, API integration, and creating responsive, user-friendly interfaces. Strong background in communications engineering with military service experience.',
 };
 
 // Work Experience
@@ -83,14 +83,20 @@ export const projects: Project[] = [
     name: 'Luca Stay',
     description:
       'A comprehensive booking platform for vacation rentals in Italy, featuring property listings, booking management, and user authentication.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React Query', 'Zustand'],
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'React Query',
+      'Zustand',
+    ],
     link: 'https://www.lucastay.it/en',
     status: 'production',
     image: '/p1.svg',
   },
   {
     id: 'proj-2',
-    name: 'PASS Citizenship & Residency',
+    name: 'PASS Residency',
     description:
       'Professional website for citizenship and residency services, showcasing programs and providing consultation booking functionality.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ShadCN/UI'],
@@ -100,7 +106,7 @@ export const projects: Project[] = [
   },
   {
     id: 'proj-3',
-    name: 'PASS Wealth Management Website',
+    name: 'PASS Wealth',
     description:
       'Corporate website for wealth management services with elegant design, service showcases, and client portal integration.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
@@ -110,10 +116,16 @@ export const projects: Project[] = [
   },
   {
     id: 'proj-4',
-    name: 'Homes & Admin Dashboard',
+    name: 'Homes Dashboard',
     description:
       'Real estate management dashboard with property listings, analytics, and administrative tools for property managers.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'React Query', 'Zustand'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'React Query',
+      'Zustand',
+    ],
     status: 'development',
     image: '/p4.svg',
     features: [
@@ -128,7 +140,13 @@ export const projects: Project[] = [
     name: 'Academies ERP Dashboard',
     description:
       'Enterprise Resource Planning system for educational institutions with student management, course scheduling, and reporting.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Redux', 'RESTful APIs'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Redux',
+      'RESTful APIs',
+    ],
     status: 'completed',
     image: '/p1.svg',
     features: [
@@ -140,10 +158,16 @@ export const projects: Project[] = [
   },
   {
     id: 'proj-6',
-    name: 'G2G Educational Dashboard',
+    name: 'G2G Dashboard',
     description:
       'Government-to-Government educational platform facilitating international student exchanges and program management.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React Hook Form', 'Zod'],
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'React Hook Form',
+      'Zod',
+    ],
     status: 'completed',
     image: '/p2.svg',
     features: [
@@ -188,8 +212,6 @@ export const skills: SkillCategory[] = [
       { name: 'JavaScript (ES6+)', level: 'expert' },
       { name: 'Tailwind CSS', level: 'expert' },
       { name: 'ShadCN/UI', level: 'advanced' },
-      { name: 'React Hook Form', level: 'advanced' },
-      { name: 'Zod', level: 'advanced' },
     ],
   },
   {
@@ -210,10 +232,7 @@ export const skills: SkillCategory[] = [
     skills: [
       { name: 'Git', level: 'advanced' },
       { name: 'GitHub', level: 'advanced' },
-      { name: 'VS Code', level: 'expert' },
-      { name: 'npm/yarn', level: 'advanced' },
       { name: 'Agile Methodologies', level: 'intermediate' },
-      { name: 'Debugging & Performance Optimization', level: 'advanced' },
     ],
   },
   {
