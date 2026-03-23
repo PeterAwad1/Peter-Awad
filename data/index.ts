@@ -39,10 +39,11 @@ export const workExperience: WorkExperience[] = [
     startDate: 'Dec 2024',
     endDate: 'Present',
     responsibilities: [
-      'Developing and maintaining responsive web applications using React, Next.js, and TypeScript',
-      'Implementing modern UI components with Tailwind CSS and ShadCN/UI',
-      'Collaborating with cross-functional teams to deliver high-quality features',
-      'Optimizing application performance and ensuring code quality',
+      'Built multiple production-ready web applications for international clients',
+      'Developed Luca Stay booking platform with Next.js and TypeScript',
+      'Created PASS Citizenship & Residency website with modern UI/UX',
+      'Implemented PASS Wealth Management website with responsive design',
+      'Delivered custom admin dashboards and ERP solutions',
     ],
   },
   {
@@ -53,11 +54,10 @@ export const workExperience: WorkExperience[] = [
     startDate: 'June 2024',
     endDate: 'Present',
     responsibilities: [
-      'Built multiple production-ready web applications for international clients',
-      'Developed Luca Stay booking platform with Next.js and TypeScript',
-      'Created PASS Citizenship & Residency website with modern UI/UX',
-      'Implemented PASS Wealth Management website with responsive design',
-      'Delivered custom admin dashboards and ERP solutions',
+      'Developing and maintaining responsive web applications using React, Next.js, and TypeScript',
+      'Implementing modern UI components with Tailwind CSS and ShadCN/UI',
+      'Collaborating with cross-functional teams to deliver high-quality features',
+      'Optimizing application performance and ensuring code quality',
     ],
   },
   {
