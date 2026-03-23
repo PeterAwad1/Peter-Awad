@@ -64,7 +64,8 @@ export const scaleOnHover: Variants = {
  */
 export const viewportConfig = {
   once: true,
-  amount: 0.3,
+  amount: 0.15,
+  margin: '0px 0px -10% 0px',
 };
 
 // Transition configurations

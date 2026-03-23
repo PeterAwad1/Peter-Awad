@@ -5,7 +5,6 @@ import { Badge } from '@/components/ui/Badge';
 import {
   fadeInUp,
   staggerContainer,
-  viewportConfig,
   usePrefersReducedMotion,
   getAccessibleVariants,
 } from '@/lib/animations';
@@ -76,9 +75,6 @@ export function SkillCategory({ category }: SkillCategoryProps) {
   return (
     <motion.div
       variants={containerVariants}
-      initial='initial'
-      whileInView='animate'
-      viewport={viewportConfig}
       className='relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm md:p-7'
     >
       <div className='absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/70 to-transparent' />

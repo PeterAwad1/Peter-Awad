@@ -90,7 +90,7 @@ const HeroSection = () => {
             </motion.p>
 
             <motion.div
-              className='mt-8 flex flex-wrap gap-3'
+              className='mt-8 flex items-center justify-center flex-wrap gap-3'
               variants={accessibleFadeInUp}
             >
               {techStack.map((item) => (

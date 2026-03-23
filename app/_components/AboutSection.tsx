@@ -91,13 +91,13 @@ const AboutSection = () => {
     >
       <div aria-hidden='true' className='absolute inset-0 ' />
 
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <div className='mx-auto max-w-7xl px-0 sm:px-6 lg:px-8'>
         <motion.div
           variants={accessibleStaggerContainer}
           initial='initial'
           whileInView='animate'
           viewport={viewportConfig}
-          className='relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm md:p-8 lg:p-10'
+          className='relative overflow-hidden rounded-[2rem] border-none md:border border-white/10 bg-white/5 p-4 backdrop-blur-sm md:p-8 lg:p-10'
         >
           <div className='absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/70 to-transparent' />
 
@@ -164,7 +164,7 @@ const AboutSection = () => {
                 <p className='text-xs uppercase tracking-[0.26em] text-blue-200/70'>
                   Education
                 </p>
-                <h3 className='mt-2 text-2xl font-semibold text-white md:text-3xl'>
+                <h3 className='mt-2 text-lg font-semibold text-white md:text-3xl'>
                   Education and training that shaped my technical foundation
                 </h3>
               </div>
@@ -179,25 +179,25 @@ const AboutSection = () => {
                   <motion.div
                     key={edu.id}
                     variants={accessibleFadeInUp}
-                    className='rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 md:p-6'
+                    className='rounded-[1.5rem] border-none md:border border-white/10 bg-transparent md:bg-white/[0.04] py-2 md:p-6'
                   >
                     <div className='flex items-start gap-4'>
                       <div
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${
+                        className={`flex h-8 w-8 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-2xl ${
                           isDegree
                             ? 'bg-blue-500/15 text-blue-200'
                             : 'bg-violet-500/15 text-violet-200'
                         }`}
                       >
-                        <Icon className='h-6 w-6' aria-hidden='true' />
+                        <Icon className='h-6 w-6 ' aria-hidden='true' />
                       </div>
 
                       <div className='min-w-0 flex-1'>
-                        <h4 className='text-lg font-semibold leading-tight text-white'>
+                        <h4 className='text-base md:text-lg font-semibold leading-tight text-white'>
                           {edu.degree}
                         </h4>
 
-                        <p className='mt-3 text-sm font-medium text-blue-50/85'>
+                        <p className='mt-3 text-xs md:text-sm font-medium text-blue-50/85'>
                           {edu.institution}
                         </p>
 

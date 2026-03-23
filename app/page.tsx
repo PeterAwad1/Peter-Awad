@@ -29,7 +29,7 @@ export default function Home() {
         id='main-content'
         className='relative bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_32%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.1),transparent_28%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.08),transparent_30%)] flex justify-center items-center flex-col overflow-x-hidden mx-auto sm:px-10 px-5'
       >
-        <div className='max-w-7xl w-full max-h-screen'>
+        <div className='w-full max-w-7xl'>
           <section id='home' aria-labelledby='hero-heading'>
             <HeroSection />
           </section>

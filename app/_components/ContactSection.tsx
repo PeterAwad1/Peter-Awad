@@ -78,7 +78,7 @@ export function ContactSection({ contactInfo, onSubmit }: ContactSectionProps) {
             <div className='space-y-4'>
               <h2
                 id='contact-heading'
-                className='max-w-xl text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl'
+                className='max-w-xl text-xl font-medium md:font-bold leading-tight text-white md:text-4xl lg:text-5xl'
               >
                 Let&apos;s build something clear, modern, and useful.
               </h2>
@@ -121,7 +121,7 @@ export function ContactSection({ contactInfo, onSubmit }: ContactSectionProps) {
           </motion.div>
 
           <motion.div variants={fadeInUp}>
-            <div className='rounded-[1.75rem] border border-white/10 bg-slate-950/40 p-5 md:p-6'>
+            <div className='rounded-[1.75rem] border-none md:border border-white/10 bg-transparent md:bg-slate-950/40 py-2 md:p-6'>
               <div className='mb-5'>
                 <p className='text-xs uppercase tracking-[0.24em] text-blue-200/70'>
                   Send Message
