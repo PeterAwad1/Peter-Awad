@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Peter Elishea Abdelaty Awad - Frontend Developer',
   description:
-    'Frontend Developer with 4+ years of experience specializing in React, Next.js, and TypeScript. Building modern, performant web applications with Tailwind CSS and ShadCN/UI. Based in Cairo, Egypt.',
+    'Frontend Developer with 2+ years of experience specializing in React, Next.js, and TypeScript. Building modern, performant web applications with Tailwind CSS and ShadCN/UI. Based in Cairo, Egypt.',
   keywords: [
     'Frontend Developer',
     'React',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: 'https://peterawad.com',
     title: 'Peter Elishea Abdelaty Awad - Frontend Developer',
     description:
-      'Frontend Developer with 4+ years of experience specializing in React, Next.js, and TypeScript. Building modern, performant web applications.',
+      'Frontend Developer with 2+ years of experience specializing in React, Next.js, and TypeScript. Building modern, performant web applications.',
     siteName: 'Peter Awad Portfolio',
     images: [
       {
