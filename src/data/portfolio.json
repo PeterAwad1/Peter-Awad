@@ -93,7 +93,7 @@
       "status": "production",
       "featured": true,
       "url": "https://lucastay.it",
-      "image": null,
+      "image": "/images/luca-stay.png",
       "tech": ["Next.js", "TypeScript", "Tailwind CSS", "ShadCN/UI"],
       "description": "Live booking platform with suite and workspace reservation flows, payment gateway, and IoT integration.",
       "highlights": [
