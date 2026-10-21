@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/layout/container";
 import { LocaleControl } from "@/components/navigation/locale-control";
 import { ThemeToggle } from "@/components/navigation/theme-toggle";
+import { CvLink } from "@/components/shared/cv-link";
 import { SiteLogo } from "@/components/shared/site-logo";
 import { SECTION_NAV, SPY_SECTION_IDS } from "@/lib/constants/nav";
 import { portfolio } from "@/lib/portfolio";
@@ -43,10 +44,14 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between gap-4">
         <a
           href="#home"
-          className="inline-flex items-center gap-2 transition-opacity hover:opacity-80"
+          className="inline-flex items-center gap-2.5 transition-opacity hover:opacity-80"
         >
           <SiteLogo />
-          <span className="sr-only">{portfolio.profile.name}</span>
+          <span className="font-display hidden text-sm font-semibold tracking-tight text-ink sm:inline">
+            Peter
+            <span className="text-accent">.</span>
+          </span>
+          <span className="sr-only sm:hidden">{portfolio.profile.name}</span>
         </a>
 
         <nav
@@ -75,13 +80,9 @@ export function SiteHeader() {
           <Suspense fallback={null}>
             <LocaleControl />
           </Suspense>
-          <a
-            href={portfolio.contact.cv}
-            download
-            className="rounded-lg border border-line bg-surface px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-accent hover:text-accent"
-          >
+          <CvLink className="rounded-lg border border-line bg-surface px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-accent hover:text-accent">
             {t("cv")}
-          </a>
+          </CvLink>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -147,14 +148,12 @@ export function SiteHeader() {
               <Suspense fallback={null}>
                 <LocaleControl />
               </Suspense>
-              <a
-                href={portfolio.contact.cv}
-                download
+              <CvLink
                 className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
                 onClick={() => setOpen(false)}
               >
                 {t("cv")}
-              </a>
+              </CvLink>
             </div>
           </Container>
         </div>

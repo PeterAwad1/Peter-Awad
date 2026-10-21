@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/layout/container";
+import { CvLink } from "@/components/shared/cv-link";
 import { SiteLogo } from "@/components/shared/site-logo";
 import { portfolio } from "@/lib/portfolio";
 
@@ -59,13 +60,9 @@ export async function SiteFooter() {
             </a>
           </li>
           <li>
-            <a
-              href={portfolio.contact.cv}
-              download
-              className="text-muted transition-colors hover:text-accent"
-            >
+            <CvLink className="text-muted transition-colors hover:text-accent">
               {t("cv")}
-            </a>
+            </CvLink>
           </li>
         </ul>
       </Container>

@@ -100,17 +100,16 @@
     }
   },
   "About": {
-    "title": "Beyond the resume",
+    "title": "A bit about me",
     "description": "Frontend developer focused on production React and Next.js applications.",
     "eyebrow": "About",
-    "lead": "A frontend engineer who cares about product craft — clear interfaces, solid architecture, and shipping with design and backend partners.",
-    "summary": "I work closely with designers and backend engineers in Agile teams — locally and remotely — to ship responsive, maintainable, performance-minded UI.",
-    "educationTitle": "Education & training",
-    "militaryTitle": "Military service",
-    "militaryBody": "{role}, {organization}",
+    "summary": "Frontend developer shipping production interfaces with React, Next.js, and TypeScript — booking platforms, bilingual dashboards, and corporate sites. I work closely with design and backend in Agile teams.",
+    "educationTitle": "Education",
+    "militaryTitle": "Service",
+    "militaryBody": "{role} · {organization}",
     "cv": "Download CV",
     "languages": "Languages",
-    "basedIn": "Based in"
+    "basedIn": "Location"
   },
   "Theme": {
     "switchToLight": "Switch to light mode",

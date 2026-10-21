@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/animations/reveal";
 import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { CvLink } from "@/components/shared/cv-link";
 import { portfolio } from "@/lib/portfolio";
 
 export async function ContactSection() {
@@ -69,13 +70,9 @@ export async function ContactSection() {
           ))}
         </ul>
 
-        <a
-          href={portfolio.contact.cv}
-          download
-          className="mt-10 inline-flex h-12 items-center justify-center rounded-lg bg-accent px-6 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
-        >
+        <CvLink className="mt-10 inline-flex h-12 items-center justify-center rounded-lg bg-accent px-6 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover">
           {t("cv")}
-        </a>
+        </CvLink>
       </Reveal>
     </Section>
   );

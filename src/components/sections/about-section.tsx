@@ -3,101 +3,90 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/animations/reveal";
 import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { CvLink } from "@/components/shared/cv-link";
 import { formatMonthYear, portfolio } from "@/lib/portfolio";
 
 export async function AboutSection() {
   const t = await getTranslations("About");
   const tCommon = await getTranslations("Common");
   const locale = await getLocale();
+  const degree = portfolio.education[0];
   const military = portfolio.militaryService;
+
+  const facts = [
+    {
+      label: t("basedIn"),
+      value: portfolio.profile.location,
+    },
+    {
+      label: t("languages"),
+      value: portfolio.profile.languages.join(" · "),
+    },
+    degree
+      ? {
+          label: t("educationTitle"),
+          value: `${degree.degree} — ${degree.institution}`,
+          meta: degree.endDate
+            ? formatMonthYear(degree.endDate, locale, tCommon("present"))
+            : undefined,
+        }
+      : null,
+    {
+      label: t("militaryTitle"),
+      value: t("militaryBody", {
+        role: military.role,
+        organization: military.organization,
+      }),
+      meta: `${formatMonthYear(military.startDate, locale, tCommon("present"))} – ${formatMonthYear(military.endDate, locale, tCommon("present"))}`,
+    },
+  ].filter(Boolean) as Array<{
+    label: string;
+    value: string;
+    meta?: string;
+  }>;
 
   return (
     <Section id="about" ariaLabelledBy="about-heading">
-      <SectionHeading
-        id="about-heading"
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-        description={t("lead")}
-      />
+      <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="lg:col-span-5">
+          <SectionHeading
+            id="about-heading"
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+          />
+          <Reveal>
+            <p className="max-w-md text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              {t("summary")}
+            </p>
+            <CvLink className="mt-8 inline-flex h-11 items-center justify-center rounded-lg border border-line bg-surface px-5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent">
+              {t("cv")}
+            </CvLink>
+          </Reveal>
+        </div>
 
-      <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-        <Reveal className="space-y-6 lg:col-span-7">
-          <p className="text-base leading-8 text-muted sm:text-lg sm:leading-8">
-            {t("summary")}
-          </p>
-          <p className="text-base leading-8 text-muted sm:text-lg sm:leading-8">
-            {portfolio.profile.summary}
-          </p>
-          <div className="flex flex-wrap items-center gap-6 pt-2">
-            <div>
-              <p className="mb-1 font-mono text-xs tracking-[0.12em] text-muted uppercase">
-                {t("languages")}
-              </p>
-              <p className="text-sm font-medium text-ink">
-                {portfolio.profile.languages.join(" · ")}
-              </p>
-            </div>
-            <div>
-              <p className="mb-1 font-mono text-xs tracking-[0.12em] text-muted uppercase">
-                {t("basedIn")}
-              </p>
-              <p className="text-sm font-medium text-ink">
-                {portfolio.profile.location}
-              </p>
-            </div>
-          </div>
-          <a
-            href={portfolio.contact.cv}
-            download
-            className="inline-flex h-11 items-center justify-center rounded-lg border border-line bg-surface px-5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
-          >
-            {t("cv")}
-          </a>
-        </Reveal>
-
-        <Reveal className="space-y-8 rounded-2xl border border-line bg-surface/80 p-6 sm:p-8 lg:col-span-5">
-          <div>
-            <h3 className="font-display text-lg font-semibold text-ink">
-              {t("educationTitle")}
-            </h3>
-            <ul className="mt-4 space-y-4">
-              {portfolio.education.map((item) => (
-                <li
-                  key={item.id}
-                  className="border-t border-line pt-4 first:border-t-0 first:pt-0"
-                >
-                  <p className="text-sm font-medium text-ink">{item.degree}</p>
-                  <p className="mt-1 text-sm text-muted">
-                    {item.institution}
-                    <span className="mx-2 text-line">·</span>
-                    {item.location}
+        <Reveal className="lg:col-span-7">
+          <dl className="divide-y divide-line border-y border-line">
+            {facts.map((fact) => (
+              <div
+                key={fact.label}
+                className="grid gap-1 py-5 sm:grid-cols-[9rem_1fr] sm:gap-6"
+              >
+                <dt className="font-mono text-xs tracking-[0.12em] text-muted uppercase">
+                  {fact.label}
+                </dt>
+                <dd>
+                  <p className="text-sm font-medium text-ink sm:text-base">
+                    {fact.value}
                   </p>
-                  {item.endDate ? (
+                  {fact.meta ? (
                     <p className="mt-1 font-mono text-xs text-muted">
-                      {formatMonthYear(item.endDate, locale, tCommon("present"))}
+                      {fact.meta}
                     </p>
                   ) : null}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display text-lg font-semibold text-ink">
-              {t("militaryTitle")}
-            </h3>
-            <p className="mt-3 text-sm text-muted">
-              {t("militaryBody", {
-                role: military.role,
-                organization: military.organization,
-              })}
-            </p>
-            <p className="mt-1 font-mono text-xs text-muted">
-              {formatMonthYear(military.startDate, locale, tCommon("present"))}
-              {" – "}
-              {formatMonthYear(military.endDate, locale, tCommon("present"))}
-            </p>
-          </div>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </Reveal>
       </div>
     </Section>

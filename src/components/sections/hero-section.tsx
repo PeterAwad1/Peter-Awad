@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { Container } from "@/components/layout/container";
+import { HeroBackdrop } from "@/components/sections/hero-backdrop";
 import { portfolio } from "@/lib/portfolio";
 
 export async function HeroSection() {
@@ -10,9 +11,11 @@ export async function HeroSection() {
     <section
       id="home"
       aria-labelledby="hero-name"
-      className="scroll-mt-24 border-b border-line/70"
+      className="relative scroll-mt-24 overflow-hidden border-b border-line/70"
     >
-      <Container className="hero-animate flex min-h-[min(88vh,52rem)] flex-col justify-center py-20 sm:py-28">
+      <HeroBackdrop />
+
+      <Container className="hero-animate relative z-10 flex min-h-[min(88vh,52rem)] flex-col justify-center py-20 sm:py-28">
         <p className="mb-6 font-mono text-xs tracking-[0.12em] text-muted uppercase sm:text-sm">
           {t("meta", {
             title: portfolio.profile.title,
@@ -45,7 +48,7 @@ export async function HeroSection() {
           </a>
           <a
             href="#contact"
-            className="inline-flex h-12 items-center justify-center rounded-lg border border-line bg-surface px-6 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex h-12 items-center justify-center rounded-lg border border-line bg-surface/80 px-6 text-sm font-medium text-ink backdrop-blur-sm transition-colors hover:border-accent hover:text-accent"
           >
             {t("ctaContact")}
           </a>

@@ -13,7 +13,7 @@
     "phone": "+20 155 163 5180",
     "linkedin": "https://linkedin.com/in/peterawad2",
     "github": "https://github.com/PeterAwad1",
-    "cv": "/Peter CV 1026 v5.pdf"
+    "cv": "/Peter-Awad-Frontend-CV.pdf"
   },
   "skills": {
     "core": [
@@ -112,7 +112,13 @@
       "featured": true,
       "url": null,
       "image": "/images/luca.png",
-      "tech": ["React", "TypeScript", "Tailwind CSS", "React Query", "Modular Architecture"],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Query",
+        "Modular Architecture"
+      ],
       "description": "Back-office dashboard to manage reservations, buildings, apartments, and services.",
       "highlights": [
         "Built the back-office dashboard for Luca Stay to manage reservations, buildings, apartments, and services from one interface.",
@@ -127,7 +133,13 @@
       "featured": true,
       "url": null,
       "image": "/images/karat.png",
-      "tech": ["React", "TypeScript", "Tailwind CSS", "React Query", "Modular Architecture"],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Query",
+        "Modular Architecture"
+      ],
       "description": "Dashboard for a digital gold platform covering buying, selling, and gifting flows with full financial management.",
       "highlights": [
         "Built a dashboard for a digital gold platform covering three flows: buying, selling, and gifting gold.",
@@ -171,7 +183,14 @@
       "featured": true,
       "url": null,
       "image": "/images/acadmies.png",
-      "tech": ["React", "TypeScript", "Tailwind CSS", "ShadCN/UI", "React Query", "FullCalendar"],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "ShadCN/UI",
+        "React Query",
+        "FullCalendar"
+      ],
       "description": "Bilingual Arabic/English ERP dashboard for analytics, scheduling, trainees, and finance.",
       "highlights": [
         "Developed a bilingual (Arabic/English) ERP dashboard covering analytics, session scheduling (FullCalendar), trainee management, and finance.",
@@ -186,7 +205,13 @@
       "featured": true,
       "url": null,
       "image": "/images/homes.png",
-      "tech": ["React", "TypeScript", "Tailwind CSS", "React Query", "ShadCN/UI"],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Query",
+        "ShadCN/UI"
+      ],
       "description": "Admin dashboard for managing real estate investment shares, properties, and financial tracking.",
       "highlights": [
         "Building an admin dashboard for managing real estate investment shares, with data dashboards, property management, and financial tracking.",

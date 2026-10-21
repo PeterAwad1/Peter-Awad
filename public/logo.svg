@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Peter Awad">
+  <!-- Soft frame  product window -->
+  <rect x="2" y="2" width="44" height="44" rx="12" stroke="currentColor" stroke-width="1.75" opacity="0.35"/>
+  <!-- Inner offset frame -->
+  <rect x="7" y="7" width="34" height="34" rx="8" stroke="currentColor" stroke-width="1.25" opacity="0.18"/>
+  <!-- Geometric P stem + bowl -->
+  <path
+    d="M16 34V14h11.2c4.85 0 8.3 3.2 8.3 7.55 0 4.4-3.45 7.6-8.3 7.6H21.2"
+    stroke="currentColor"
+    stroke-width="3.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Craft accent  signal dot -->
+  <circle cx="36.5" cy="13.5" r="2.6" fill="#2DD4BF"/>
+</svg>

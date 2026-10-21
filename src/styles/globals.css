@@ -150,19 +150,9 @@ html[dir="rtl"] .font-display {
   top: 1rem;
 }
 
-/* Logo: black SVG → light on dark, dark on light */
+/* Logo mark — sized via Tailwind; color via currentColor */
 .site-logo {
-  height: 2rem;
-  width: auto;
-  filter: invert(1);
-}
-
-.light .site-logo {
-  filter: none;
-}
-
-.site-logo-lg {
-  height: 2.5rem;
+  display: block;
 }
 
 /* Hero entrance */
@@ -222,5 +212,91 @@ html[dir="rtl"] .font-display {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ── Hero backdrop ─────────────────────────────────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 55%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 20%, transparent 75%);
+  transform: perspective(900px) rotateX(52deg) scale(1.35);
+  transform-origin: center top;
+}
+
+.hero-orb {
+  filter: blur(64px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.hero-orb-a {
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 55%, transparent), transparent 70%);
+  animation: hero-orb-drift 18s ease-in-out infinite;
+}
+
+.hero-orb-b {
+  background: radial-gradient(circle, color-mix(in srgb, var(--muted) 35%, transparent), transparent 70%);
+  animation: hero-orb-drift 22s ease-in-out infinite reverse;
+  animation-delay: -4s;
+}
+
+.hero-orb-c {
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%);
+  animation: hero-orb-drift 26s ease-in-out infinite;
+  animation-delay: -8s;
+  opacity: 0.4;
+}
+
+.hero-beam {
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    color-mix(in srgb, var(--accent) 8%, transparent) 48%,
+    color-mix(in srgb, var(--ink) 4%, transparent) 52%,
+    transparent 65%
+  );
+  background-size: 200% 200%;
+  animation: hero-beam-sweep 14s ease-in-out infinite;
+  mix-blend-mode: soft-light;
+}
+
+.light .hero-beam {
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+}
+
+@keyframes hero-orb-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(4%, 6%, 0) scale(1.06);
+  }
+  66% {
+    transform: translate3d(-3%, 3%, 0) scale(0.96);
+  }
+}
+
+@keyframes hero-beam-sweep {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb-a,
+  .hero-orb-b,
+  .hero-orb-c,
+  .hero-beam {
+    animation: none;
   }
 }
