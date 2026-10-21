@@ -8,4 +8,4 @@ export const routes = {
   verifyEmail: "/verify-email",
 } as const;
 
-export const publicSitemapPaths = [routes.home, routes.about] as const;
+export const publicSitemapPaths = [routes.home] as const;

@@ -28,6 +28,15 @@ export async function buildLocaleMetadata({
 }: BuildLocaleMetadataOptions): Promise<Metadata> {
   const resolvedLocale = resolveLocale(locale);
   const t = await getTranslations({ locale: resolvedLocale, namespace });
+  const tMeta = await getTranslations({
+    locale: resolvedLocale,
+    namespace: "Metadata",
+  });
+
+  const title = t("title");
+  const description = t("description");
+  const siteName = tMeta("siteName");
+  const canonical = getPathname({ locale: resolvedLocale, href: pathname });
 
   const languages = Object.fromEntries(
     routing.locales.map((loc) => [
@@ -37,10 +46,10 @@ export async function buildLocaleMetadata({
   );
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
     alternates: {
-      canonical: getPathname({ locale: resolvedLocale, href: pathname }),
+      canonical,
       languages: {
         ...languages,
         "x-default": getPathname({
@@ -50,8 +59,17 @@ export async function buildLocaleMetadata({
       },
     },
     openGraph: {
+      type: "website",
+      siteName,
+      title,
+      description,
       locale: resolvedLocale,
       alternateLocale: routing.locales.filter((loc) => loc !== resolvedLocale),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }

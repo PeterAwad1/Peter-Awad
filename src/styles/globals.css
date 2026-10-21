@@ -1,30 +1,226 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Dark is the default theme */
+:root,
+.dark {
+  --bg: #0b0e11;
+  --surface: #14191f;
+  --ink: #eef1f4;
+  --muted: #9aa3ad;
+  --line: #2a323c;
+  --accent: #2dd4bf;
+  --accent-hover: #5eead4;
+  --on-accent: #04110f;
+  --signal: #143029;
+  --background: var(--bg);
+  --foreground: var(--ink);
+}
+
+.light {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #0e1217;
+  --muted: #5c6570;
+  --line: #d7dce3;
+  --accent: #0f766e;
+  --accent-hover: #0b5f59;
+  --on-accent: #ffffff;
+  --signal: #e8f3f1;
+  --background: var(--bg);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-signal: var(--signal);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-syne);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--ink);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 html[dir="rtl"] body {
   font-family: var(--font-arabic), Arial, Helvetica, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-syne), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+html[dir="rtl"] .font-display {
+  font-family: var(--font-arabic), var(--font-syne), Arial, Helvetica, sans-serif;
+}
+
+/* Atmospheric page wash */
+.site-atmosphere {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-atmosphere::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(45, 212, 191, 0.1), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(154, 163, 173, 0.06), transparent 50%),
+    var(--bg);
+}
+
+.light .site-atmosphere::before {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(15, 118, 110, 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(92, 101, 112, 0.06), transparent 50%),
+    var(--bg);
+}
+
+.site-atmosphere::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: 0.5rem;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Logo: black SVG → light on dark, dark on light */
+.site-logo {
+  height: 2rem;
+  width: auto;
+  filter: invert(1);
+}
+
+.light .site-logo {
+  filter: none;
+}
+
+.site-logo-lg {
+  height: 2.5rem;
+}
+
+/* Hero entrance */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate > * {
+  animation: hero-fade-up 0.7s ease both;
+}
+
+.hero-animate > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero-animate > *:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.hero-animate > *:nth-child(3) {
+  animation-delay: 0.25s;
+}
+.hero-animate > *:nth-child(4) {
+  animation-delay: 0.35s;
+}
+.hero-animate > *:nth-child(5) {
+  animation-delay: 0.45s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate > * {
+    animation: none;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

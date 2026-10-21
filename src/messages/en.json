@@ -1,32 +1,131 @@
 {
   "Metadata": {
-    "title": "Next Structure",
-    "description": "A production-ready Next.js starter with English and Arabic support.",
-    "siteName": "Next Structure"
+    "title": "Peter Elishea Awad — Frontend Developer",
+    "description": "Frontend developer building production web applications with React, Next.js, and TypeScript — booking platforms, bilingual dashboards, and corporate sites.",
+    "siteName": "Peter Elishea Awad"
   },
   "Common": {
     "save": "Save",
     "cancel": "Cancel",
     "delete": "Delete",
     "edit": "Edit",
-    "loading": "Loading"
+    "loading": "Loading",
+    "present": "Present",
+    "live": "Live site",
+    "role": "Frontend",
+    "skipToContent": "Skip to content"
   },
   "Navigation": {
+    "primary": "Primary",
     "home": "Home",
+    "work": "Work",
+    "experience": "Experience",
+    "approach": "Approach",
     "about": "About",
-    "login": "Sign in"
+    "contact": "Contact",
+    "login": "Sign in",
+    "cv": "CV",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "Footer": {
-    "copyright": "© {year} Next Structure"
+    "copyright": "© {year} {name}",
+    "tagline": "{title} · {location}",
+    "email": "Email",
+    "cv": "Download CV"
   },
   "Home": {
-    "title": "Hello World",
-    "description": "A production-ready Next.js starter with English and Arabic support.",
-    "cta": "Learn more"
+    "title": "Peter Elishea Awad — Frontend Developer",
+    "description": "Frontend developer building production web applications with React, Next.js, and TypeScript.",
+    "cta": "View selected work"
+  },
+  "Hero": {
+    "meta": "{title} · {location} · {tagline}",
+    "headline": "I build production interfaces that feel as solid as the systems behind them.",
+    "support": "Booking platforms with payments and IoT, bilingual dashboards, and corporate sites — crafted in React, Next.js, and TypeScript.",
+    "ctaWork": "Selected work",
+    "ctaContact": "Contact"
+  },
+  "Work": {
+    "eyebrow": "Selected work",
+    "title": "Products shipped to production",
+    "description": "Interfaces for booking, mobility, education, and operations — with real users and real constraints.",
+    "highlightsLabel": "Key contributions",
+    "techLabel": "Stack",
+    "statusProduction": "Production",
+    "statusInProgress": "In progress"
+  },
+  "MoreWork": {
+    "eyebrow": "More work",
+    "title": "Additional projects",
+    "description": "Dashboards and product surfaces that round out the practice."
+  },
+  "Experience": {
+    "eyebrow": "Experience",
+    "title": "Where I build",
+    "description": "Shipping production frontend systems with design and backend partners."
+  },
+  "Approach": {
+    "eyebrow": "Approach",
+    "title": "How I build",
+    "description": "Principles shaped by shipping real products — not theory decks.",
+    "items": {
+      "production": {
+        "title": "Production systems",
+        "body": "Ship interfaces that hold up under real traffic: payments, booking flows, dashboards, and edge cases."
+      },
+      "components": {
+        "title": "Component systems",
+        "body": "Reusable UI with Tailwind and ShadCN/UI so features stay consistent and delivery stays fast."
+      },
+      "data": {
+        "title": "Data and API craft",
+        "body": "React Query for caching, async flows, and server state — so the UI stays predictable."
+      },
+      "rtl": {
+        "title": "Bilingual product UI",
+        "body": "Arabic/English and RTL interfaces designed as first-class experiences, not afterthoughts."
+      }
+    }
+  },
+  "Craft": {
+    "eyebrow": "Craft",
+    "title": "Technical toolkit",
+    "description": "The stack I use to design, build, and ship frontend products.",
+    "groups": {
+      "core": "Core",
+      "uiAndForms": "UI & forms",
+      "stateAndData": "State & data",
+      "tools": "Tools"
+    }
   },
   "About": {
-    "title": "About",
-    "description": "This app uses next-intl for locale-aware routing, translations, and SEO."
+    "title": "Beyond the resume",
+    "description": "Frontend developer focused on production React and Next.js applications.",
+    "eyebrow": "About",
+    "lead": "A frontend engineer who cares about product craft — clear interfaces, solid architecture, and shipping with design and backend partners.",
+    "summary": "I work closely with designers and backend engineers in Agile teams — locally and remotely — to ship responsive, maintainable, performance-minded UI.",
+    "educationTitle": "Education & training",
+    "militaryTitle": "Military service",
+    "militaryBody": "{role}, {organization}",
+    "cv": "Download CV",
+    "languages": "Languages",
+    "basedIn": "Based in"
+  },
+  "Theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Let’s build something solid",
+    "description": "Open to frontend roles and collaborations — remote or on-site.",
+    "availability": "Availability",
+    "email": "Email",
+    "phone": "Phone",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "cv": "Download CV"
   },
   "Auth": {
     "Social": {
@@ -82,7 +181,7 @@
   },
   "LocaleSwitcher": {
     "label": "Language",
-    "en": "English",
-    "ar": "العربية"
+    "en": "EN",
+    "ar": "AR"
   }
 }

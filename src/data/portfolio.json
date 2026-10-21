@@ -1,0 +1,232 @@
+{
+  "profile": {
+    "name": "Peter Elishea Awad",
+    "title": "Frontend Developer",
+    "tagline": "React · Next.js · TypeScript",
+    "location": "Cairo, Egypt",
+    "summary": "Frontend Developer building production web applications with React, Next.js, and TypeScript. Delivered a live booking platform with payment gateway and IoT integration, corporate websites, and admin, ERP, financial, and education dashboards (including bilingual Arabic/English). Strong in API integration with React Query, reusable component systems with Tailwind CSS and ShadCN/UI, and responsive, performance-focused UI. Comfortable working with designers and backend engineers in Agile teams, locally and remotely.",
+    "availability": "Open to opportunities",
+    "languages": ["English", "Arabic"]
+  },
+  "contact": {
+    "email": "peterelishea@gmail.com",
+    "phone": "+20 155 163 5180",
+    "linkedin": "https://linkedin.com/in/peterawad2",
+    "github": "https://github.com/PeterAwad1",
+    "cv": "/Peter CV 1026 v5.pdf"
+  },
+  "skills": {
+    "core": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3"
+    ],
+    "uiAndForms": [
+      "Tailwind CSS",
+      "ShadCN/UI",
+      "React Hook Form",
+      "Zod",
+      "FullCalendar",
+      "Arabic/English (RTL)",
+      "Modular Architecture"
+    ],
+    "stateAndData": [
+      "React Query",
+      "Zustand",
+      "Redux",
+      "Context API",
+      "REST APIs",
+      "JSON"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "npm/yarn",
+      "Figma",
+      "Node.js",
+      "Express"
+    ]
+  },
+  "experience": [
+    {
+      "id": "sb-technology",
+      "role": "Frontend Developer",
+      "company": "SB Technology",
+      "employmentType": "Full-time",
+      "location": "Cairo, Egypt",
+      "startDate": "2024-12",
+      "endDate": null,
+      "current": true,
+      "highlights": [
+        "Build and maintain production Next.js and React applications in TypeScript, including a booking platform, corporate websites, and admin and financial dashboards.",
+        "Created a reusable component library with Tailwind CSS and ShadCN/UI to speed up feature delivery and keep UI consistent across projects.",
+        "Integrated REST APIs and managed server state, caching, and async data flows with React Query.",
+        "Worked in Agile sprints with designers and backend developers to ship responsive, maintainable features.",
+        "Applied performance and accessibility practices: optimised rendering, responsive layouts, and clean component architecture."
+      ]
+    },
+    {
+      "id": "freelance",
+      "role": "Freelance Frontend Developer",
+      "company": "Independent",
+      "employmentType": "Freelance",
+      "location": "Remote",
+      "startDate": "2024-06",
+      "endDate": null,
+      "current": true,
+      "highlights": [
+        "Delivered responsive web interfaces for independent clients using React, Tailwind CSS, and modern JavaScript.",
+        "Implemented form validation and state management with React Hook Form, Zod, and React Query.",
+        "Built reusable UI components and integrated APIs for dynamic web applications."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "luca-stay",
+      "name": "Luca Stay",
+      "subtitle": "Booking Platform",
+      "status": "production",
+      "featured": true,
+      "url": "https://lucastay.it",
+      "image": null,
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "ShadCN/UI"],
+      "description": "Live booking platform with suite and workspace reservation flows, payment gateway, and IoT integration.",
+      "highlights": [
+        "Built the frontend of a live booking platform with two reservation flows: suites and workspaces.",
+        "Developed dynamic booking calendars, availability management, and end-to-end reservation flows.",
+        "Integrated the Nexi payment gateway for secure online payments.",
+        "Connected IoT control systems so guests can manage smart apartment features from the interface.",
+        "Structured the app with Next.js routing and a server/client component split for an optimised frontend."
+      ]
+    },
+    {
+      "id": "luca-stay-admin",
+      "name": "Luca Stay — Admin Dashboard",
+      "subtitle": "Back-office management",
+      "status": "production",
+      "featured": true,
+      "url": null,
+      "image": "/images/luca.png",
+      "tech": ["React", "TypeScript", "Tailwind CSS", "React Query", "Modular Architecture"],
+      "description": "Back-office dashboard to manage reservations, buildings, apartments, and services.",
+      "highlights": [
+        "Built the back-office dashboard for Luca Stay to manage reservations, buildings, apartments, and services from one interface.",
+        "Used React Query for data fetching and caching, and a modular architecture to keep each management area isolated and easy to extend."
+      ]
+    },
+    {
+      "id": "karat",
+      "name": "Karat",
+      "subtitle": "Digital Gold Dashboard",
+      "status": "production",
+      "featured": true,
+      "url": null,
+      "image": "/images/karat.png",
+      "tech": ["React", "TypeScript", "Tailwind CSS", "React Query", "Modular Architecture"],
+      "description": "Dashboard for a digital gold platform covering buying, selling, and gifting flows with full financial management.",
+      "highlights": [
+        "Built a dashboard for a digital gold platform covering three flows: buying, selling, and gifting gold.",
+        "Implemented full financial management for each flow, giving admins clear visibility into transactions and balances.",
+        "Organised the codebase into feature modules with typed data layers (TypeScript) and React Query for server state."
+      ]
+    },
+    {
+      "id": "pass-residency",
+      "name": "PASS Citizenship & Residency",
+      "subtitle": "Corporate website",
+      "status": "production",
+      "featured": true,
+      "url": "https://passresidency.com",
+      "image": "/images/pass-residency.png",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "ShadCN/UI"],
+      "description": "Corporate website for global mobility and citizenship services.",
+      "highlights": [
+        "Developed a corporate website for global mobility and citizenship services, with a focus on performance, accessibility, and responsive UI."
+      ]
+    },
+    {
+      "id": "pass-wm",
+      "name": "PASS Wealth Management",
+      "subtitle": "Corporate website",
+      "status": "production",
+      "featured": true,
+      "url": "https://passwm.com",
+      "image": "/images/pass-wm.png",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "ShadCN/UI"],
+      "description": "Corporate website presenting investment and residency services.",
+      "highlights": [
+        "Built a corporate website presenting investment and residency services, with a responsive design and clean UI architecture."
+      ]
+    },
+    {
+      "id": "academies-erp",
+      "name": "Academies ERP Dashboard",
+      "subtitle": "Bilingual education ERP",
+      "status": "production",
+      "featured": true,
+      "url": null,
+      "image": "/images/acadmies.png",
+      "tech": ["React", "TypeScript", "Tailwind CSS", "ShadCN/UI", "React Query", "FullCalendar"],
+      "description": "Bilingual Arabic/English ERP dashboard for analytics, scheduling, trainees, and finance.",
+      "highlights": [
+        "Developed a bilingual (Arabic/English) ERP dashboard covering analytics, session scheduling (FullCalendar), trainee management, and finance.",
+        "Built authentication with sign-in, password recovery, and role-based access."
+      ]
+    },
+    {
+      "id": "homes-admin",
+      "name": "Homes Admin Dashboard",
+      "subtitle": "Real estate investment admin",
+      "status": "in-progress",
+      "featured": true,
+      "url": null,
+      "image": "/images/homes.png",
+      "tech": ["React", "TypeScript", "Tailwind CSS", "React Query", "ShadCN/UI"],
+      "description": "Admin dashboard for managing real estate investment shares, properties, and financial tracking.",
+      "highlights": [
+        "Building an admin dashboard for managing real estate investment shares, with data dashboards, property management, and financial tracking.",
+        "Using React Query caching and data-fetching strategies for performance, with reusable components and scalable state management."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "modern-academy",
+      "degree": "B.Sc. Communications and Electronics Engineering",
+      "institution": "Modern Academy for Engineering and Technology",
+      "location": "Cairo, Egypt",
+      "startDate": null,
+      "endDate": "2020-06",
+      "status": "graduated"
+    },
+    {
+      "id": "nti",
+      "degree": "Training Program",
+      "institution": "National Telecommunication Institute (NTI)",
+      "location": "New Capital, Egypt",
+      "startDate": null,
+      "endDate": "2023-10",
+      "status": "completed"
+    }
+  ],
+  "militaryService": {
+    "role": "Officer & Communications Engineer",
+    "organization": "Egyptian Armed Forces",
+    "startDate": "2020-10",
+    "endDate": "2023-04",
+    "status": "completed"
+  },
+  "navigation": [
+    { "id": "home", "label": "Home", "href": "#home" },
+    { "id": "about", "label": "About", "href": "#about" },
+    { "id": "experience", "label": "Experience", "href": "#experience" },
+    { "id": "projects", "label": "Projects", "href": "#projects" },
+    { "id": "skills", "label": "Skills", "href": "#skills" },
+    { "id": "contact", "label": "Contact", "href": "#contact" }
+  ]
+}

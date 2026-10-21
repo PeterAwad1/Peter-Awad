@@ -1,10 +1,15 @@
 import { HomeView } from "@/features/home";
 import { buildLocaleMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/constants/routes";
+import type { LocalePageProps } from "@/types/next";
 
-export async function generateMetadata({ params }: PageProps<"/[locale]">) {
+export async function generateMetadata({ params }: LocalePageProps) {
   const { locale } = await params;
-  return buildLocaleMetadata({ locale, pathname: routes.home, namespace: "Home" });
+  return buildLocaleMetadata({
+    locale,
+    pathname: routes.home,
+    namespace: "Metadata",
+  });
 }
 
 export default function HomePage() {

@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_Arabic, Syne } from "next/font/google";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { getTranslations } from "next-intl/server";
 
 import { getDirection, isAppLocale } from "@/i18n/locale";
 import { routing } from "@/i18n/routing";
 import { buildLocaleMetadata } from "@/lib/metadata";
+import { themeInitScript } from "@/lib/theme";
 import { AppProviders } from "@/providers/app-providers";
+import type { LocaleLayoutProps } from "@/types/next";
 
 import "@/styles/globals.css";
 
@@ -20,6 +23,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+});
+
 const notoSansArabic = Noto_Sans_Arabic({
   variable: "--font-arabic",
   subsets: ["arabic"],
@@ -31,7 +40,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: LayoutProps<"/[locale]">): Promise<Metadata> {
+}: Pick<LocaleLayoutProps, "params">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({
     locale: isAppLocale(locale) ? locale : routing.defaultLocale,
@@ -50,7 +59,7 @@ export async function generateMetadata({
 export default async function LocaleLayout({
   children,
   params,
-}: LayoutProps<"/[locale]">) {
+}: LocaleLayoutProps) {
   const { locale } = await params;
 
   if (!isAppLocale(locale)) {
@@ -61,9 +70,15 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={getDirection(locale)}
-      className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} h-full antialiased`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${syne.variable} ${notoSansArabic.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col">
+      <body className="site-atmosphere flex min-h-full flex-col text-ink">
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
         <AppProviders>{children}</AppProviders>
       </body>
     </html>
