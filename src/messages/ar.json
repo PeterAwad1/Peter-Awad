@@ -1,0 +1,88 @@
+{
+  "Metadata": {
+    "title": "Next Structure",
+    "description": "نقطة بداية جاهزة للإنتاج من Next.js مع دعم الإنجليزية والعربية.",
+    "siteName": "Next Structure"
+  },
+  "Common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "loading": "جاري التحميل"
+  },
+  "Navigation": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "login": "تسجيل الدخول"
+  },
+  "Footer": {
+    "copyright": "© {year} Next Structure"
+  },
+  "Home": {
+    "title": "مرحباً بالعالم",
+    "description": "نقطة بداية جاهزة للإنتاج من Next.js مع دعم الإنجليزية والعربية.",
+    "cta": "اعرف المزيد"
+  },
+  "About": {
+    "title": "من نحن",
+    "description": "يستخدم هذا التطبيق next-intl للتوجيه والترجمة وتحسين محركات البحث حسب اللغة."
+  },
+  "Auth": {
+    "Social": {
+      "google": "متابعة باستخدام Google",
+      "facebook": "متابعة باستخدام Facebook",
+      "apple": "متابعة باستخدام Apple"
+    },
+    "Login": {
+      "title": "تسجيل الدخول",
+      "description": "مرحباً بعودتك. أدخل بياناتك للمتابعة.",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "submit": "تسجيل الدخول",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "noAccount": "ليس لديك حساب؟",
+      "register": "إنشاء حساب"
+    },
+    "Register": {
+      "title": "إنشاء حساب",
+      "description": "أدخل بياناتك للبدء.",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "submit": "إنشاء حساب",
+      "hasAccount": "لديك حساب بالفعل؟",
+      "login": "تسجيل الدخول"
+    },
+    "ForgotPassword": {
+      "title": "نسيت كلمة المرور",
+      "description": "أدخل بريدك الإلكتروني وسنرسل تعليمات إعادة التعيين.",
+      "email": "البريد الإلكتروني",
+      "submit": "إرسال رابط إعادة التعيين",
+      "backToLogin": "العودة إلى تسجيل الدخول"
+    },
+    "ResetPassword": {
+      "title": "إعادة تعيين كلمة المرور",
+      "description": "اختر كلمة مرور جديدة لحسابك.",
+      "password": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "submit": "تحديث كلمة المرور",
+      "backToLogin": "العودة إلى تسجيل الدخول"
+    },
+    "VerifyEmail": {
+      "title": "تحقق من بريدك الإلكتروني",
+      "description": "تحقق من صندوق الوارد واتبع رابط التحقق لتفعيل حسابك.",
+      "backToLogin": "العودة إلى تسجيل الدخول"
+    }
+  },
+  "NotFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير موجودة.",
+    "backHome": "العودة إلى الرئيسية"
+  },
+  "LocaleSwitcher": {
+    "label": "اللغة",
+    "en": "English",
+    "ar": "العربية"
+  }
+}

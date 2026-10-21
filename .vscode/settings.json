@@ -1,2 +1,16 @@
 {
+  "workbench.editor.customLabels.patterns": {
+    "**/app/**/page.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · page",
+    "**/app/**/layout.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · layout",
+    "**/app/**/loading.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · loading",
+    "**/app/**/error.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · error",
+    "**/app/**/global-error.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · global-error",
+    "**/app/**/not-found.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · not-found",
+    "**/app/**/forbidden.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · forbidden",
+    "**/app/**/unauthorized.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · unauthorized",
+    "**/app/**/template.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · template",
+    "**/app/**/default.{js,jsx,ts,tsx}": "${dirname(1)}/${dirname} · default",
+    "**/app/**/route.{js,ts}": "${dirname(1)}/${dirname} · route"
+  },
+  "i18n-ally.localesPaths": ["src/i18n", "src/messages"]
 }

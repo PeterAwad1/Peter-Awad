@@ -1,0 +1,88 @@
+{
+  "Metadata": {
+    "title": "Next Structure",
+    "description": "A production-ready Next.js starter with English and Arabic support.",
+    "siteName": "Next Structure"
+  },
+  "Common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "login": "Sign in"
+  },
+  "Footer": {
+    "copyright": "© {year} Next Structure"
+  },
+  "Home": {
+    "title": "Hello World",
+    "description": "A production-ready Next.js starter with English and Arabic support.",
+    "cta": "Learn more"
+  },
+  "About": {
+    "title": "About",
+    "description": "This app uses next-intl for locale-aware routing, translations, and SEO."
+  },
+  "Auth": {
+    "Social": {
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook",
+      "apple": "Continue with Apple"
+    },
+    "Login": {
+      "title": "Sign in",
+      "description": "Welcome back. Enter your details to continue.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "register": "Create account"
+    },
+    "Register": {
+      "title": "Create account",
+      "description": "Enter your details to get started.",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in"
+    },
+    "ForgotPassword": {
+      "title": "Forgot password",
+      "description": "Enter your email and we will send reset instructions.",
+      "email": "Email",
+      "submit": "Send reset link",
+      "backToLogin": "Back to sign in"
+    },
+    "ResetPassword": {
+      "title": "Reset password",
+      "description": "Choose a new password for your account.",
+      "password": "New password",
+      "confirmPassword": "Confirm password",
+      "submit": "Update password",
+      "backToLogin": "Back to sign in"
+    },
+    "VerifyEmail": {
+      "title": "Verify your email",
+      "description": "Check your inbox and follow the verification link to activate your account.",
+      "backToLogin": "Back to sign in"
+    }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to home"
+  },
+  "LocaleSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية"
+  }
+}
