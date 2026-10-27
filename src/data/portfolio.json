@@ -58,7 +58,7 @@
       "company": "SB Technology",
       "employmentType": "Full-time",
       "location": "Cairo, Egypt",
-      "startDate": "2024-12",
+      "startDate": "2024-06",
       "endDate": null,
       "current": true,
       "highlights": [
@@ -67,21 +67,6 @@
         "Integrated REST APIs and managed server state, caching, and async data flows with React Query.",
         "Worked in Agile sprints with designers and backend developers to ship responsive, maintainable features.",
         "Applied performance and accessibility practices: optimised rendering, responsive layouts, and clean component architecture."
-      ]
-    },
-    {
-      "id": "freelance",
-      "role": "Freelance Frontend Developer",
-      "company": "Independent",
-      "employmentType": "Freelance",
-      "location": "Remote",
-      "startDate": "2024-06",
-      "endDate": null,
-      "current": true,
-      "highlights": [
-        "Delivered responsive web interfaces for independent clients using React, Tailwind CSS, and modern JavaScript.",
-        "Implemented form validation and state management with React Hook Form, Zod, and React Query.",
-        "Built reusable UI components and integrated APIs for dynamic web applications."
       ]
     }
   ],
